@@ -68,106 +68,127 @@
       0.0302
     ]
   ],
-  "top_stable_genes": [
-    [
-      1744,
-      100,
-      100
-    ],
-    [
-      1828,
-      100,
-      100
-    ],
-    [
-      1833,
-      100,
-      100
-    ],
-    [
-      1881,
-      100,
-      100
-    ],
-    [
-      2287,
-      100,
-      100
-    ],
-    [
-      4195,
-      100,
-      100
-    ],
-    [
-      4846,
-      100,
-      100
-    ],
-    [
-      6040,
-      100,
-      100
-    ],
-    [
-      3251,
-      99,
-      100
-    ],
-    [
-      2120,
-      98,
-      100
-    ],
-    [
-      2019,
-      94,
-      100
-    ],
-    [
-      2110,
-      86,
-      100
-    ],
-    [
-      6918,
-      73,
-      100
-    ],
-    [
-      3319,
-      73,
-      100
-    ],
-    [
-      4365,
-      70,
-      100
-    ],
-    [
-      6004,
-      64,
-      100
-    ],
-    [
-      1673,
-      58,
-      100
-    ],
-    [
-      460,
-      48,
-      100
-    ],
-    [
-      4228,
-      48,
-      100
-    ],
-    [
-      1778,
-      30,
-      100
-    ]
-  ]
+  "top_stable_genes_annotated": [
+    {
+      "probe": "M16038_at",
+      "gene": "LYN",
+      "folds_pct": 100,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "M22960_at",
+      "gene": null,
+      "folds_pct": 100,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "M23197_at",
+      "gene": "CD33",
+      "folds_pct": 100,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "M27891_at",
+      "gene": "CST3 (cystatin C)",
+      "folds_pct": 100,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "M84526_at",
+      "gene": "CFD (adipsin)",
+      "folds_pct": 100,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "X17042_at",
+      "gene": null,
+      "folds_pct": 100,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "X95735_at",
+      "gene": "ZYX (zyxin)",
+      "folds_pct": 100,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "L09209_s_at",
+      "gene": null,
+      "folds_pct": 100,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "U46499_at",
+      "gene": null,
+      "folds_pct": 99,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "M63138_at",
+      "gene": "CTSD (cathepsin D)",
+      "folds_pct": 98,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "M55150_at",
+      "gene": "FAH",
+      "folds_pct": 94,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "M62762_at",
+      "gene": "ATP6V0C",
+      "folds_pct": 86,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "X16546_at",
+      "gene": null,
+      "folds_pct": 73,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "U50136_rna1_at",
+      "gene": null,
+      "folds_pct": 73,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "X61587_at",
+      "gene": null,
+      "folds_pct": 70,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "M32304_s_at",
+      "gene": null,
+      "folds_pct": 64,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "M11147_at",
+      "gene": "FTL (ferritin light chain)",
+      "folds_pct": 58,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "D49950_at",
+      "gene": null,
+      "folds_pct": 48,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "X52056_at",
+      "gene": null,
+      "folds_pct": 48,
+      "higher_in": "AML"
+    },
+    {
+      "probe": "M19507_at",
+      "gene": "MPO (myeloperoxidase)",
+      "folds_pct": 30,
+      "higher_in": "AML"
+    }
+  ],
+  "annotation_source": "golubEsets Hu6800 probe order; alignment to expression matrix verified (per-sample corr=1.0)"
 }

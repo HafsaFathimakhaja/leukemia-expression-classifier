@@ -36,7 +36,7 @@ With the honest protocol, ALL and AML are genuinely easy to separate — a singl
 
 ![Accuracy vs number of genes](figures/accuracy_vs_genes.png)
 
-## A stable signature
+## A stable — and biologically sensible — signature
 
 A gene signature is only useful if the same genes keep getting chosen. Counting how often each gene is
 selected across all 100 training folds, eight genes are picked in **every single fold** — a reproducible
@@ -44,9 +44,25 @@ core signature, as opposed to genes that look important once by chance.
 
 ![Gene selection stability](figures/gene_stability.png)
 
-`scikit-feature`'s matrix carries no gene symbols, so genes appear by column index; mapping the stable
-indices to names would use the dataset's Affymetrix Hu6800 annotation. The point demonstrated here is the
-*reproducibility* of the selection, which is the property a trustworthy signature must have.
+Mapping the probes to genes (via the Affymetrix Hu6800 annotation used by `golubEsets`) shows the
+signature is not a statistical curiosity — it is **real leukemia biology**. Of the eight genes selected
+in every fold, five are classic myeloid / AML markers: **CD33** (the target of the AML drug
+gemtuzumab), **cystatin C (CST3)**, **zyxin (ZYX)**, **adipsin (CFD)** and the tyrosine kinase **LYN**.
+Every reproducibly-selected gene is **expressed more highly in AML than ALL** — a direction computed
+straight from the data — which is exactly what makes them read-outs of the myeloid lineage. These are
+the same markers the original Golub study highlighted, recovered here by an automatic, leakage-free
+pipeline.
+
+| Probe | Gene | Folds selected | Higher in |
+|---|---|---|---|
+| M23197_at | **CD33** | 100% | AML |
+| M27891_at | **CST3** (cystatin C) | 100% | AML |
+| X95735_at | **ZYX** (zyxin) | 100% | AML |
+| M84526_at | **CFD** (adipsin) | 100% | AML |
+| M16038_at | **LYN** | 100% | AML |
+| M22960_at, X17042_at, L09209_s_at | (uncharacterised here) | 100% | AML |
+| M63138_at | **CTSD** (cathepsin D) | 98% | AML |
+| M55150_at | **FAH** | 94% | AML |
 
 ## How it works
 
@@ -88,14 +104,15 @@ figures/     the three figures above
 - **Selection bias / data leakage**, shown with a shuffled-label control rather than merely asserted.
 - Building a leakage-free evaluation with a scikit-learn `Pipeline` and repeated stratified CV.
 - Reasoning about how many features are actually needed, and the stability of a selected signature.
+- Connecting a data-driven gene signature back to known cancer biology (myeloid/AML markers).
 - Reproducing a foundational computational-biology result and reporting the honest accuracy.
 
 ## Limitations
 
 - 72 patients is small; even with repeated CV the estimates carry a few points of uncertainty, and a
   truly independent cohort would be the stronger test.
-- The expression matrix is pre-standardised and unannotated, so this project stops at gene indices rather
-  than named biomarkers.
+- Gene symbols are given for the well-characterised probes; a few reproducibly-selected probes are left
+  as their Affymetrix identifiers rather than guessed.
 - Univariate selection ignores gene–gene interactions; multivariate or embedded selection could find a
   smaller or more biologically coherent signature.
 
@@ -106,6 +123,8 @@ figures/     the three figures above
 - Ambroise C. & McLachlan G.J. Selection bias in gene extraction on the basis of microarray
   gene-expression data. *PNAS* 99, 6562–6566 (2002).
 - Li J. *et al.* Feature selection: a data perspective (`scikit-feature`). *ACM Computing Surveys* (2017).
+- Gene annotation via the `golubEsets` Bioconductor package (Affymetrix Hu6800 platform); probe order
+  verified to match the expression matrix used here.
 
 ## Author
 
